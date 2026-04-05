@@ -1,0 +1,49 @@
+1. Find Dataset
+2. Analyze Dataset and Create Data Issue Log
+	EX. Table | Column | Issue | Row Count | Magnitude (% of Data) | Solvable | Resolution
+		1. Eyeball Check for any problems
+		2. Filter Check for anything that stands out (EX. Different date formats)
+		
+Data from the U.S. Bureau of Labor Statistics
+	- https://www.bls.gov/oes/tables.htm
+
+
+ROUGH STEPS:
+	1. Downloaded the data from the website
+	2. Opened it and manually insepcted the data to get familar with the information
+		- Convient field descriptions in the file itself
+	3. Identified the fields that will be most relevant to me.
+		- Exclude things like error information, hourly wages (focusing on annual)
+		- Dropped MEAN_PRSE, EMP_PRSE, PCT_TOTAL, PCT_RPT, ANNUAL, and HOURLY
+	4. Imported data to python and checked the import and Sliced the columns i wont use
+		- Noticed numerical data is being delcared a object. (this is due to BLS including symboles like * for extra information)
+	5. Wanted to Focus on only data roles in my field so sliced down to only those jobs
+		- The OCC-codes kept are:
+			13-1160 Market Research Analyst
+			13-1161 Market Research Analyst
+			15-1242 Database Administrators
+			15-1243 Database Architects
+			15-2030 Operations Research Analyst
+			15-2031 Operations Research Analyst
+			15-2050 Data Scientist
+			15-2051 Data Scientist
+		- Only want to include dups that end in 1 because they are detailed based on the BLS desciprtions
+	6. Checked job count at each type of location
+		- Only 7 jobs from territories so we removed those because its to low to provide insight
+	7. Checking salary columns to confirm and discrepiences
+		- Got back some missing values but overall very clean
+		- LOC_Quotient had a good amount of missing valus but that is due to not being tracked on a national or state level
+		
+QUICK OVERVIEW
+1. Loaded a 414,000 row government dataset
+2. Selected only the relevant columns
+3. Handled BLS suppression flags and converted types
+4. Filtered to 5 targeted data roles
+5. Removed territories and rows with missing core metrics
+6. Validated the output with sanity checks
+7. Exported a clean, Tableau-ready CSV
+
+
+TABLEAU SECTION
+	1. Imported into Tableau and check fields
+		- Only 2 rows imported wrong and needed to be changed from abc to numeric which are jobs 1000 and loc quiotient
