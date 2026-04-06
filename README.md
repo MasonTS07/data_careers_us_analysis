@@ -2,6 +2,10 @@
 
 **Live Dashboard:** [View on Tableau Public](https://public.tableau.com/app/profile/mason.spalding/viz/DataCareersintheUS-SalaryGeographicOverview/Overview?publish=yes)
 
+![Dashboard 1 Preview](DashboardOne.png)
+![Dashboard 1 Preview](DashboardTwo.png)
+
+
 ## Overview
 
 This project analyzes employment and wage data from the US Bureau of Labor Statistics to answer a key question: Where should someone interested in a data role go to maximize their salary and opportunity?
